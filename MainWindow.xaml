@@ -26,14 +26,14 @@
 
         <ListBox Grid.Column="0"
                  Grid.Row="1"
-                 Width="150"
+                 Width="170"
                  Height="200"
-                 x:Name="lbfirst"/>
+                 x:Name="lbfirst" SelectionChanged="lbfirst_SelectionChanged"/>
 
         <ListBox Grid.Column="2"
                  Grid.Row="1"
                  Grid.ColumnSpan="2"
-                 Width="150"
+                 Width="170"
                  Height="200"
                  x:Name="lbsecond"/>
 
@@ -61,9 +61,7 @@
         <TextBlock x:Name="BookName"
                  Grid.Column="0"
                  Grid.Row="2"
-                 Width="100"
-                 Height="15"
-                 Margin="62,55,102,62"/>
+                 Margin="60,35,230,80" Grid.ColumnSpan="2"/>
 
         <Label Content="Name:"
                Grid.Column="0"
@@ -74,8 +72,7 @@
                  Grid.Column="0"
                  Grid.Row="2"
                  Width="100"
-                 Height="15"
-                 Margin="70,40,95,80"/>
+                 Margin="60,55,110,60"/>
 
         <Label Content="Price:"
                Grid.Column="0"
@@ -88,7 +85,7 @@
                 Grid.Row="2"
                 Width="80"
                 Height="20"
-                Margin="10,100,30,10"/>
+                Margin="10,90,30,10"/>
 
         <Button x:Name="Add"
                 Content="Add to cart"
@@ -110,13 +107,11 @@
                Grid.Column="0"
                Grid.Row="2"
                Margin="20,70,190,36"/>
-        
+
         <TextBlock x:Name="Bookauthor"
             Grid.Column="0"
             Grid.Row="2"
-            Width="100"
-            Height="15"
-            Margin="70,80,95,40"/>
+            Margin="70,75,34,37"/>
 
 
     </Grid>

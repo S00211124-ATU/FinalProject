@@ -17,5 +17,24 @@ namespace FinalProject
         public string Author { get; set; }
         public string Type { get; set; }
 
+        public string GetName()
+        {
+            return $"{Name}";
+        }
+
+        public string GetPrice()
+        {
+            return $"£{Price}";
+        }
+
+        public string GetAuthor()
+        {
+            return $"{Author}";
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
