@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -27,13 +27,15 @@
         <ListBox Grid.Column="0"
                  Grid.Row="1"
                  Width="150"
-                 Height="200"/>
+                 Height="200"
+                 x:Name="lbfirst"/>
 
         <ListBox Grid.Column="2"
                  Grid.Row="1"
                  Grid.ColumnSpan="2"
                  Width="150"
-                 Height="200"/>
+                 Height="200"
+                 x:Name="lbsecond"/>
 
 
         <RadioButton Content="Sci-fi"
@@ -61,7 +63,7 @@
                  Grid.Row="2"
                  Width="100"
                  Height="15"
-                 Margin="70,60,95,80"/>
+                 Margin="62,55,102,62"/>
 
         <Label Content="Name:"
                Grid.Column="0"
@@ -78,7 +80,7 @@
         <Label Content="Price:"
                Grid.Column="0"
                Grid.Row="2"
-               Margin="20,55,190,50"/>
+               Margin="20,50,190,55"/>
 
         <Button x:Name="Details"
                 Content="More Details"
@@ -86,7 +88,7 @@
                 Grid.Row="2"
                 Width="80"
                 Height="20"
-                Margin="10,70,30,10"/>
+                Margin="10,100,30,10"/>
 
         <Button x:Name="Add"
                 Content="Add to cart"
@@ -103,6 +105,18 @@
                 Width="80"
                 Height="20"
                 Margin="10,-20,30,10"/>
+
+        <Label Content="Author:"
+               Grid.Column="0"
+               Grid.Row="2"
+               Margin="20,70,190,36"/>
+        
+        <TextBlock x:Name="Bookauthor"
+            Grid.Column="0"
+            Grid.Row="2"
+            Width="100"
+            Height="15"
+            Margin="70,80,95,40"/>
 
 
     </Grid>
