@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BookDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,6 +68,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Book.cs" />
+    <Compile Include="BookDetails.xaml.cs">
+      <DependentUpon>BookDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,6 +104,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="thewayofkings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dune.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="frankenstein.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hyperion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="neuromancer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="notebook.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="thedukeandi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="treasureisland.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="outlander.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

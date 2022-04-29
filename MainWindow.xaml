@@ -5,114 +5,141 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
+        Title="MainWindow" Height="477" Width="855.5" Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen">
+  <Grid>
 
-        <Grid.ColumnDefinitions>
+    <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
 
-        </Grid.ColumnDefinitions>
+    </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
+    <Grid.RowDefinitions>
 
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="16*"/>
+      <RowDefinition Height="10*"/>
+      <RowDefinition Height="25*"/>
+      <RowDefinition Height="16*"/>
 
-        </Grid.RowDefinitions>
+    </Grid.RowDefinitions>
 
-        <ListBox Grid.Column="0"
+    <ListBox Grid.Column="0"
                  Grid.Row="1"
-                 Width="170"
-                 Height="200"
-                 x:Name="lbfirst" SelectionChanged="lbfirst_SelectionChanged"/>
+                 x:Name="lbfirst" 
+                 SelectionChanged="lbfirst_SelectionChanged" Margin="56,9,10,130" Grid.RowSpan="2"/>
 
-        <ListBox Grid.Column="2"
+    <ListBox Grid.Column="2"
                  Grid.Row="1"
-                 Grid.ColumnSpan="2"
-                 Width="170"
-                 Height="200"
-                 x:Name="lbsecond"/>
+                 x:Name="lbsecond" 
+                 SelectionChanged="lbsecond_SelectionChanged" Margin="10,9,56,130" Grid.RowSpan="2"/>
 
 
-        <RadioButton Content="Sci-fi"
+    <RadioButton Content="Sci-fi"
                      Grid.Column="0"
                      Grid.Row="0"
-                     Margin="90,30"/>
+                     Margin="90,30"
+                     x:Name="rbscifi" 
+                     Checked="rb_Checked"/>
 
-        <RadioButton Content="Adventure"
+    <RadioButton Content="Adventure"
                      Grid.Column="1"
                      Grid.Row="0"
-                     Margin="90,30"/>
+                     Margin="10,30,180,30"
+                     x:Name="rbadventure" 
+                     Checked="rb_Checked"/>
 
-        <RadioButton Content="Romance"
-                     Grid.Column="2"
+    <RadioButton Content="Romance"
+                     Grid.Column="1"
                      Grid.Row="0"
-                     Margin="90,30"/>
+                     Margin="220,30,230,30"
+                     x:Name="rbromance" 
+                     Checked="rb_Checked" 
+                     Grid.ColumnSpan="2"/>
 
-        <Label Content="Video Game Details:"
+    <RadioButton Content="All"
+                 Grid.Column="2"
+                 Grid.Row="0"
+                 Margin="120,30,90,30"
+                 x:Name="rball" 
+                 Checked="rb_Checked"/>
+
+    <Label Content="Video Game Details:"
                Grid.Column="0"
                Grid.Row="2"
                Margin="20,10"/>
 
-        <TextBlock x:Name="BookName"
+    <TextBlock x:Name="BookName"
                  Grid.Column="0"
                  Grid.Row="2"
-                 Margin="60,35,230,80" Grid.ColumnSpan="2"/>
+                 Margin="60,35,230,80" 
+                 Grid.ColumnSpan="2"/>
 
-        <Label Content="Name:"
+    <Label Content="Name:"
                Grid.Column="0"
                Grid.Row="2"
                Margin="20,30,195,70"/>
 
-        <TextBlock x:Name="BookPrice"
+    <TextBlock x:Name="BookPrice"
                  Grid.Column="0"
                  Grid.Row="2"
                  Width="100"
                  Margin="60,55,110,60"/>
 
-        <Label Content="Price:"
+    <Label Content="Price:"
                Grid.Column="0"
                Grid.Row="2"
                Margin="20,50,190,55"/>
 
-        <Button x:Name="Details"
+    <Button x:Name="Details"
                 Content="More Details"
                 Grid.Column="0"
                 Grid.Row="2"
                 Width="80"
                 Height="20"
-                Margin="10,90,30,10"/>
+                Margin="10,90,30,10" Click="Details_Click"/>
 
-        <Button x:Name="Add"
+    <Button x:Name="Add"
                 Content="Add to cart"
                 Grid.Column="2"
                 Grid.Row="2"
                 Width="80"
                 Height="20"
-                Margin="10,50,30,10"/>
+                Margin="10,10,30,10" Click="Add_Click"/>
 
-        <Button x:Name="Buy"
-                Content="Buy"
-                Grid.Column="2"
-                Grid.Row="2"
-                Width="80"
-                Height="20"
-                Margin="10,-20,30,10"/>
+    <Button x:Name="Buy"
+              Content="Buy"
+              Grid.Column="2"
+              Grid.Row="2"
+              Width="80"
+              Height="20"
+              Margin="10,-50,30,10"/>
 
-        <Label Content="Author:"
+    <Button x:Name="Remove"
+              Content="Remove from cart"
+              Grid.Column="2"
+              Grid.Row="2"
+              Width="100"
+              Height="20"
+              Margin="10,70,30,10" Click="Remove_Click"/>
+
+    <Label Content="Author:"
                Grid.Column="0"
                Grid.Row="2"
                Margin="20,70,190,36"/>
 
-        <TextBlock x:Name="Bookauthor"
+    <TextBlock x:Name="Bookauthor"
             Grid.Column="0"
             Grid.Row="2"
             Margin="70,75,34,37"/>
 
 
-    </Grid>
+    <Image x:Name="BookImage"
+           Grid.Column="1"
+           Grid.Row="1" 
+           Margin="33,10,112,5"/>
+
+
+  </Grid>
 </Window>
