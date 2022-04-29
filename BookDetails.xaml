@@ -6,8 +6,68 @@
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
         Title="BookDetails" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="65*"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0" 
+                   Margin="40,25,190,95"
+                   x:Name="BookName"/>
+
+        <TextBlock x:Name="BookAuthor"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Margin="40,60,190,60"/>
+
+        <TextBlock x:Name="BookPrice"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Margin="40,90,190,30"/>
+
+        <TextBlock x:Name="BookArrival"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   Margin="205,115,45,10"/>
+
+        <Label Content="Arrival date if bought today:"
+               Grid.Column="0"
+               Grid.Row="0"
+               Margin="40,115,190,0"/>
+
+        <Image x:Name="BookImage"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="80,10,70,5"/>
+
+        <Label Content="Cover:"
+               Grid.Row="1"
+               Grid.Column="0"
+               Margin="20,20,320,220"/>
+
+        <Label Content="Synopsis:"
+               Grid.Row="1"
+               Grid.Column="1"
+               Margin="20,20,315,220"/>
+
+        <TextBlock x:Name="BookDesc"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                   Margin="80,10,20,5"/>
+
+
     </Grid>
 </Window>

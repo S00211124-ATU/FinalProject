@@ -129,7 +129,7 @@
                Grid.Row="2"
                Margin="20,70,190,36"/>
 
-    <TextBlock x:Name="Bookauthor"
+    <TextBlock x:Name="BookAuthor"
             Grid.Column="0"
             Grid.Row="2"
             Margin="70,75,34,37"/>

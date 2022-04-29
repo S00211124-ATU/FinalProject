@@ -20,9 +20,9 @@ namespace FinalProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Book> books = new List<Book>();
-        List<Book> chosenbooks = new List<Book>();
-        List<Book> filteredbooks = new List<Book>();
+        internal List<Book> books = new List<Book>();
+        internal List<Book> chosenbooks = new List<Book>();
+        internal List<Book> filteredbooks = new List<Book>();
         public MainWindow()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace FinalProject
             {
                 BookName.Text = selectedBook.GetName();
                 BookPrice.Text = selectedBook.GetPrice();
-                Bookauthor.Text = selectedBook.GetAuthor();
+                BookAuthor.Text = selectedBook.GetAuthor();
                 BookImage.Source = new BitmapImage(new Uri(selectedBook.Image, UriKind.RelativeOrAbsolute));
             }
         }
@@ -106,7 +106,7 @@ namespace FinalProject
             {
                 BookName.Text = selectedBook.GetName();
                 BookPrice.Text = selectedBook.GetPrice();
-                Bookauthor.Text = selectedBook.GetAuthor();
+                BookAuthor.Text = selectedBook.GetAuthor();
                 BookImage.Source = new BitmapImage(new Uri(selectedBook.Image, UriKind.RelativeOrAbsolute));
             }
         }
@@ -192,6 +192,8 @@ namespace FinalProject
         {
             BookDetails secondwindow = new BookDetails();
             secondwindow.ShowDialog();
+
+            secondwindow.Owner = this;
         }
     }
 }

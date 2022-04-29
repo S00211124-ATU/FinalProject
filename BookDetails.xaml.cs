@@ -23,5 +23,25 @@ namespace FinalProject
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = this.Owner as MainWindow;
+
+
+        }
+
+        private void lbfirst_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Book selectedBook = lbfirst.SelectedItem as Book;
+
+            if (selectedBook != null)
+            {
+                BookName.Text = selectedBook.GetName();
+                BookPrice.Text = selectedBook.GetPrice();
+                BookAuthor.Text = selectedBook.GetAuthor();
+                BookImage.Source = new BitmapImage(new Uri(selectedBook.Image, UriKind.RelativeOrAbsolute));
+            }
+        }
     }
 }
