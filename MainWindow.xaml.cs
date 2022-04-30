@@ -22,7 +22,7 @@ namespace FinalProject
     public partial class MainWindow : Window
     {
         internal ObservableCollection<Book> books = new ObservableCollection<Book>();
-        internal List<Book> chosenbooks = new List<Book>();
+        internal ObservableCollection<Book> chosenbooks = new ObservableCollection<Book>();
         internal List<Book> filteredbooks = new List<Book>();
         public MainWindow()
         {
@@ -217,21 +217,61 @@ namespace FinalProject
 
         private void Buy_Click(object sender, RoutedEventArgs e)
         {
-            //Book selectedItem = lbfirst.SelectedItem as Book;
-
-            Book yo = new Book();
-
-            int totalPrice = 0;
+            var button = sender as Button;
 
 
-                for (int i=0; i <= chosenbooks.Count; i++)
-                {
-                    totalPrice = totalPrice + Convert.ToInt32(lbsecond.SelectedItems);
-                
+            for (int i = 0; i <= chosenbooks.Count; i++)
+            {
+                tempPrice = chosenbooks.Sum(books => books.Price);
+            }
 
-
-                }
+            totalPrice = tempPrice + totalPrice;
             TotalPrice.Text = $"{totalPrice}";
+
+
+            if (button != null)
+            {
+                chosenbooks.Clear();
+            }
+
+
+        }
+
+        static Random rnd = new Random();
+        private int tempPrice;
+        private int totalPrice;
+
+        private void lucky_Click(object sender, RoutedEventArgs e)
+        {
+
+            int list = rnd.Next(0, lbfirst.Items.Count);
+
+            if (lbfirst.Items != null)
+            {
+                Book randomBook = lbfirst.Items[list] as Book;
+
+                if (randomBook != null)
+                {
+                    chosenbooks.Add(randomBook);
+
+                    for (int i = 0; i < books.Count; i++)
+                    {
+                        if (randomBook.Name == books[i].Name)
+                        {
+                            books.RemoveAt(i);
+                        }
+                    }
+                }
+
+                lbfirst.ItemsSource = null;
+                lbfirst.ItemsSource = books;
+                lbsecond.ItemsSource = null;
+                lbsecond.ItemsSource = chosenbooks;
+            }
+            else
+            {
+                MessageBox.Show("Out of Stock");
+            }
 
         }
     }

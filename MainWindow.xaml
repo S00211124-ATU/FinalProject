@@ -146,7 +146,15 @@
                Grid.Column="1"
                Width="70"
                Height="30" 
-               Margin="50,55,165,55"/>
+               Margin="50,55,0,55" HorizontalAlignment="Left"/>
+
+        <Button x:Name="lucky"
+                Content="Feeling Lucky?"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="130"
+                Height="30" 
+                Margin="70,15,83,95" Click="lucky_Click"/>
 
 
     </Grid>
