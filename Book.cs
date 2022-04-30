@@ -12,7 +12,7 @@ namespace FinalProject
 
         public string Name { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
+        public int Price { get; set; }
         public string Image { get; set; }
         public string Author { get; set; }
         public string Type { get; set; }
@@ -37,5 +37,21 @@ namespace FinalProject
         {
             return Name;
         }
+
+        public string GetDesc()
+        {
+            return $"{Description}";
+        }
+
+        public string GetDate()
+        {
+            return $"{Delivery.Date.ToShortDateString()}";
+        }
+
+        public int GetPrice1()
+        {
+            return Price;
+        }
+
     }
 }
